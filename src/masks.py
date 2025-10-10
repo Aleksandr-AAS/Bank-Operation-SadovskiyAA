@@ -39,6 +39,7 @@ def get_mask_account(my_str: int) -> str:
     masked = "**" + my_str1[-5:-1]
     return masked
 
+
 # my_str = [9876543210987654]
 # print (get_mask_card_number(my_str))
 
