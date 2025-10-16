@@ -40,6 +40,6 @@ def mask_account_card(my_str: str) -> str:
 
 
 def get_date(my_str: str) -> str:
-"""Функция которая выводит дату в формате ДД.ММ.ГГГГ"""
+    """Функция которая выводит дату в формате ДД.ММ.ГГГГ"""
     date_mask = my_str[8:10] + "." + my_str[5:7] + "." + my_str[0:4]
     return date_mask
