@@ -43,3 +43,9 @@ def get_date(my_str: str) -> str:
     """Функция которая выводит дату в формате ДД.ММ.ГГГГ"""
     date_mask = my_str[8:10] + "." + my_str[5:7] + "." + my_str[0:4]
     return date_mask
+
+
+def get_pass(my_str: str) -> str:
+    date_mask = '1'
+    pass
+    return (date_mask)
