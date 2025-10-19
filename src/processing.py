@@ -10,7 +10,6 @@ def filter_by_state(my_list: List[Dict[str, str]], state: str = "EXECUTED") -> L
     return [operation for operation in my_list if operation.get("state") == state]
 
 
-
 def sort_by_date(my_list: List[Dict[str, str]], reverse: bool = True) -> List[Dict[str, str]]:
     """Функция принимает на вход список словарей и параметр порядка сортировки,
     возвращает новый список, в котором исходные словари отсортированы по дате"""
