@@ -38,4 +38,4 @@ pip install -r requirements.txt
 
 ## Лицензия:
 
-FREE
+не требуется
