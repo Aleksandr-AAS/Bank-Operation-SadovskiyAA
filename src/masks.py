@@ -7,18 +7,18 @@ def get_mask_card_number(my_str: int) -> str:
     """Маскирует номер карты по шаблону XXXX XX** **** XXXX"""
     my_str1 = str(my_str)
     # Проверяем корректность длины номера карты
-    if len(my_str1) != 18:
+    if len(my_str1) != 16:
         return "Номер карты должен содержать 16 цифр"
     # Формируем маску
     masked = (
-        my_str1[1:5]
+        my_str1[0:4]
         + " "  # первые 4 цифры
-        + my_str1[5:7]
+        + my_str1[4:6]
         + "**"
         + " "  # следующие 2 цифры и **
         + "****"
         + " "  # четыре звездочки
-        + my_str1[-5:-1]  # последние 4 цифры
+        + my_str1[-4:-1] + my_str1[-1]   # последние 4 цифры
     )
     return masked
 
@@ -33,15 +33,15 @@ def get_mask_account(my_str: int) -> str:
     # Преобразуем число в строку
     my_str1 = str(my_str)
     # Проверяем минимальную длину номера счета
-    if len(my_str1) < 8:
+    if len(my_str1) < 6:
         return "Номер счета должен содержать минимум 6 цифр"
     # Формируем маску
-    masked = "**" + my_str1[-5:-1]
+    masked = "**" + my_str1[-4:-1] + my_str1[-1]
     return masked
 
 
-# my_str = [9876543210987654]
+# my_str = 9876543210987654
 # print (get_mask_card_number(my_str))
 
-# my_str = [876543]
-# print (get_mask_account(my_str))
+my_str = 876543
+print (get_mask_account(my_str))
