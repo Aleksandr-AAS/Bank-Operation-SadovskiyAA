@@ -10,6 +10,8 @@
 def mask_account_card(my_str: str) -> str:
     """Маскирует номер карты по шаблону BANK-NAME XXXX XX** **** XXXX
     Маскирует номер счета по шаблону Счет **4305  # выход функции"""
+    if len(my_str) == 0:
+        return "Проверьте номер счета или карты"
     if "Счет" in my_str:
         masked_sch = "Счет" + " " + "**" + my_str[-4:-1] + my_str[-1]
         return masked_sch
@@ -40,5 +42,7 @@ def mask_account_card(my_str: str) -> str:
 
 def get_date(my_str: str) -> str:
     """Функция которая выводит дату в формате ДД.ММ.ГГГГ"""
+    if len(my_str) == 0:
+        return "Проверьте данные"
     date_mask = my_str[8:10] + "." + my_str[5:7] + "." + my_str[0:4]
     return date_mask
