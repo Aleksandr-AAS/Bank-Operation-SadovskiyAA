@@ -18,7 +18,8 @@ def get_mask_card_number(my_str: int) -> str:
         + " "  # следующие 2 цифры и **
         + "****"
         + " "  # четыре звездочки
-        + my_str1[-4:-1] + my_str1[-1]   # последние 4 цифры
+        + my_str1[-4:-1]
+        + my_str1[-1]  # последние 4 цифры
     )
     return masked
 
