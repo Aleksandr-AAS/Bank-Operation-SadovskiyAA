@@ -1,6 +1,6 @@
 import json
-# import logging
-#
+import logging
+
 # logger = logging.getLogger(__name__)
 # logger.setLevel(logging.DEBUG)
 # file_handler = logging.FileHandler("../logs/utils.log", mode="w", encoding="utf-8")
