@@ -34,7 +34,7 @@ def get_mask_card_number(my_str: int) -> str:
         + my_str1[-4:-1]
         + my_str1[-1]  # последние 4 цифры
     )
-    logger.info("Функция get_mask_card_number - успешно выполнена")
+    # logger.info("Функция get_mask_card_number - успешно выполнена")
     return masked
 
 
