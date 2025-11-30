@@ -6,7 +6,7 @@ def processing_csv(file_path: str) -> list[dict]:
     """Функция  считывания финансовых операций из CSV выдает список словарей с транзакциями"""
     try:
         with open(file_path, mode="r", encoding="utf-8") as csv_file:
-            csv_reader = csv.DictReader(csv_file)
+            csv_reader = csv.DictReader(csv_file, delimiter=";")
             result = [row for row in csv_reader]
         return result
     except FileNotFoundError:

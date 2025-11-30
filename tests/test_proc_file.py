@@ -22,7 +22,7 @@ def transaction():
 
 
 def test_processing_csv(transaction):
-    csv_string = transaction.to_csv(index=False)
+    csv_string = transaction.to_csv(sep=";", index=False)
     with mock.patch("builtins.open", mock.mock_open(read_data=csv_string)) as open_:
         result = processing_csv("TEST.csv")
         assert result == [
