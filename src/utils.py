@@ -1,10 +1,14 @@
 import json
 import logging
-#
-logger = logging.getLogger(__name__)
+import os
+current_dir = os.path.dirname(os.path.abspath(__file__))
+rel_file_path = os.path.join(current_dir, "../logs/utils.log")
+abs_file_path = os.path.abspath(rel_file_path)
+
+logger = logging.getLogger("utils.py")
 logger.setLevel(logging.DEBUG)
 file_handler = logging.FileHandler(
-    "C:/Users/1/PycharmProjects/Bank-Operation-SadovskiyAA/logs/utils.log", mode="w", encoding="utf-8"
+    abs_file_path, mode="w", encoding="utf-8"
 )
 file_handler.setLevel(logging.DEBUG)
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
@@ -29,3 +33,6 @@ def get_list_dict_json(file_path: str) -> list[dict]:
     except (FileNotFoundError, json.JSONDecodeError):
         logger.error("Неправильный формат файла или файл не найден")
         return []
+
+
+print(get_list_dict_json("C:/Users/1/PycharmProjects/Bank-Operation-SadovskiyAA/data/operations.json"))
