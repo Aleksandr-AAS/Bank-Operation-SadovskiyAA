@@ -1,15 +1,18 @@
 import json
 import logging
 import os
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 rel_file_path = os.path.join(current_dir, "../logs/utils.log")
-abs_file_path = os.path.abspath(rel_file_path)
+abs_file_path = os.path.abspath(rel_file_path)  # Это путь до лог файла
+
+json_file_path = os.path.join(current_dir, "../data/operations.json")
+json_file_path_real = os.path.abspath(json_file_path)  # Это путь до json файла
+
 
 logger = logging.getLogger("utils.py")
 logger.setLevel(logging.DEBUG)
-file_handler = logging.FileHandler(
-    abs_file_path, mode="w", encoding="utf-8"
-)
+file_handler = logging.FileHandler(abs_file_path, mode="w", encoding="utf-8")
 file_handler.setLevel(logging.DEBUG)
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 file_handler.setFormatter(formatter)
@@ -35,4 +38,4 @@ def get_list_dict_json(file_path: str) -> list[dict]:
         return []
 
 
-print(get_list_dict_json("C:/Users/1/PycharmProjects/Bank-Operation-SadovskiyAA/data/operations.json"))
+# print(get_list_dict_json(json_file_path_real))

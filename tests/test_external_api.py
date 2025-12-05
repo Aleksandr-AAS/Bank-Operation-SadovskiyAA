@@ -1,7 +1,8 @@
+from unittest.mock import Mock, patch
+
 import pytest
+
 from src.external_api import convert_to_rub
-from unittest.mock import Mock
-from unittest.mock import patch
 
 
 @pytest.mark.parametrize(
